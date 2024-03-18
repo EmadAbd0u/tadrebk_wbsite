@@ -72,7 +72,7 @@ class HeaderBody extends StatelessWidget {
     return Column(
       children: [
         const AutoSizeText(
-          "Training Today",
+          "Training Now",
           maxLines: 1,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 53),
         ),
