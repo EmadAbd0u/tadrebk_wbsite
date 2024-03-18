@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "tadrebkwbsite",
+    "firebase deploy --only firestore:rules --project <your-project-id>": "tadrebk-website"
+  },
+  "targets": {},
+  "etags": {}
+}

@@ -40,6 +40,7 @@ class DesktopPage extends StatelessWidget {
                     const SizedBox(
                       height: 30,
                     ),
+
                     MaterialButton(
                       color: Colors.white,
                       shape: const RoundedRectangleBorder(
@@ -65,9 +66,10 @@ class DesktopPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Expanded(
               child: Lottie.network(
-                  "https://lottie.host/3775b05c-55df-48b6-a031-6ff1f4f11e84/fPu9PFFyNt.json",
+                  "assets/images/website-Mobile.json",
                   height: 700,
                   width: 700),
             ),
@@ -296,7 +298,8 @@ Center desktopThirdScreen(BuildContext context) {
   );
 }
 
-Container lastDesktopScreen(BuildContext context) {
+Container lastDesktopScreen(BuildContext context)
+{
   return Container(
     height: 30,
     color: Colors.blueGrey,
@@ -305,7 +308,7 @@ Container lastDesktopScreen(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const Text(
-          "Copyright © 2023 WhatiLearnToday All Rights Reserved",
+          "Copyright © 2024 All Rights Reserved",
           style: TextStyle(
             color: Colors.black,
           ),

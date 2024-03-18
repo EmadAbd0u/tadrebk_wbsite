@@ -18,7 +18,7 @@ class MyHomePage extends StatelessWidget {
               Color.fromARGB(255, 120, 187, 241),
               // Color.fromARGB(255, 145, 211, 22),
 
-              Colors.deepPurpleAccent,
+              Colors.blueAccent,
             ])),
         child: const SingleChildScrollView(
           child: Column(

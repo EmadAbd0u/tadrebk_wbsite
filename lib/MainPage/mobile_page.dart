@@ -14,6 +14,7 @@ class MobilePage extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
+          // عنوان الصفحة
           const Text(
             "Web Developer",
             style: TextStyle(
@@ -21,6 +22,7 @@ class MobilePage extends StatelessWidget {
                 fontSize: 30.0,
                 color: Colors.white),
           ),
+          // النص الوصفي
           const Padding(
             padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 5),
             child: Text(
@@ -28,6 +30,7 @@ class MobilePage extends StatelessWidget {
               style: TextStyle(fontSize: 16.0, color: Colors.white),
             ),
           ),
+          // زر "Our Services"
           MaterialButton(
             color: Colors.white,
             shape: const RoundedRectangleBorder(
@@ -41,10 +44,14 @@ class MobilePage extends StatelessWidget {
               ),
             ),
           ),
+          // رسم متحرك
           Lottie.network(
               "https://lottie.host/c642558f-e7e2-465c-86a8-e215e9fc5564/Hpqm3CtUTX.json"),
+          // الشاشة الثانية للهاتف المحمول
           secondMobileScreen(context),
+          // الشاشة الأخيرة للهاتف المحمول
           lastPage(context),
+          // شريط حقوق النشر
           Container(
             width: double.infinity,
             height: 30,
@@ -61,6 +68,7 @@ class MobilePage extends StatelessWidget {
         ]);
   }
 
+  // الشاشة الثانية للهاتف المحمول
   Container secondMobileScreen(BuildContext context) {
     return Container(
       color: Colors.deepPurpleAccent,
@@ -69,6 +77,7 @@ class MobilePage extends StatelessWidget {
         padding: const EdgeInsets.all(38.0),
         child: Column(
           children: [
+            // صورة مع عنوان متحرك
             Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(40),
@@ -86,6 +95,7 @@ class MobilePage extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width / 16,
                     ),
+                    // عنوان متحرك
                     const Text(
                       "Learn",
                       style: TextStyle(
@@ -96,6 +106,7 @@ class MobilePage extends StatelessWidget {
                     const SizedBox(
                       width: 5,
                     ),
+                    // كلمات متحركة
                     AnimatedTextKit(
                       repeatForever: true,
                       animatedTexts: [
@@ -142,6 +153,7 @@ class MobilePage extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
+            // نص متحرك
             Container(
               decoration: BoxDecoration(
                 color: Colors.blue[200],
@@ -185,6 +197,7 @@ class MobilePage extends StatelessWidget {
   }
 }
 
+// الشاشة الأخيرة للهاتف المحمول
 Container lastPage(BuildContext context) {
   return Container(
     width: double.infinity,

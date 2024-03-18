@@ -5,9 +5,12 @@ class Navbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(
-      builder: (context, constraints) {
+      builder: (context, constraints)
+      {
         if (constraints.maxWidth > 1280) {
+
           return const DesktopNavbar();
         } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1280) {
           return const DesktopNavbar();

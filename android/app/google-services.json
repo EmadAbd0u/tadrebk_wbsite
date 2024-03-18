@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "858974112994",
+    "project_id": "tadrebk-website",
+    "storage_bucket": "tadrebk-website.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858974112994:android:cc841953e5305269e062bb",
+        "android_client_info": {
+          "package_name": "com.example.flutter_web"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoXe_1BqmtpUlRxuvfXuY9hC0qXfl3Txg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
