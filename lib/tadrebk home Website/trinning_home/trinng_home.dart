@@ -6,7 +6,7 @@ import 'package:flutter_web/tadrebk%20home%20Website/screen/responsive.dart';
 import 'package:flutter_web/tadrebk%20home%20Website/trinning_home/detail_training_screen.dart';
 
 class TrinningHome extends StatefulWidget {
-  const TrinningHome({Key? key}) : super(key: key);
+  const TrinningHome({super.key});
 
   @override
   _TrinningHomeState createState() => _TrinningHomeState();
@@ -28,10 +28,10 @@ class _TrinningHomeState extends State<TrinningHome> {
       backgroundColor: Colors.indigo[300],
       appBar: AppBar(
         backgroundColor: Colors.black12,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 16.0, bottom: 16.0),
+        title: const Padding(
+          padding: EdgeInsets.only(top: 16.0, bottom: 16.0),
           child: Center(
-            child: const Text(
+            child: Text(
               'All Training for Tadrebk',
               style: TextStyle(
                 color: Colors.white,
@@ -73,7 +73,9 @@ class _TrinningHomeState extends State<TrinningHome> {
                 label: 'Search Training',
                 labelColor: Colors.amber,
                 prefix: Icons.search,
-                validate: (value) {},
+                validate: (value) {
+                  return null;
+                },
                 onChanged: (value) {
                   filterTrainings(value);
                 },

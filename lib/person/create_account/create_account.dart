@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:crypto/crypto.dart'; // استيراد المكتبة المسؤولة عن التشفير
 import 'package:flutter/material.dart';
 import 'package:flutter_web/person/login_screen/login_screen.dart';
 import 'package:flutter_web/person/model_firebase/model_firbase.dart';
@@ -187,8 +189,9 @@ class _CreateAccountPersonState extends State<CreateAccountPerson> {
 
                           function: () async {
                             if (_formKey.currentState!.validate()) {
+                              // إنشاء كائن Person من البيانات المدخلة
                               Person person = Person(
-                                personId: '',
+                                personId: '', // يمكنك توليد معرف فريد هنا إذا كان مطلوبًا
                                 firstName: firstNameController.text,
                                 lastName: lastNameController.text,
                                 email: emailController.text,
@@ -197,6 +200,7 @@ class _CreateAccountPersonState extends State<CreateAccountPerson> {
                                 addressStreet: addressStreetController.text,
                                 addressCity: addressCityController.text,
                               );
+                              // استخدام الدالة المخصصة لإنشاء الحساب
                               await createNewAccount(person);
                             }
                           },
@@ -219,8 +223,8 @@ class _CreateAccountPersonState extends State<CreateAccountPerson> {
                             TextButton(
 
                               onPressed: () {
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const CreateAccountPerson(),));
                                 // قم بتحديد مسار الانتقال إلى شاشة التسجيل هنا
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginScreen(),));
                               },
                               child: const Text(
                                 'SIGN IN',
@@ -249,35 +253,45 @@ class _CreateAccountPersonState extends State<CreateAccountPerson> {
     );
   }
 
-
-
+  // دالة لإنشاء حساب جديد في Firebase وحفظه في Firestore
   Future<void> createNewAccount(Person person) async {
     try {
-      // Registration in Firebase Authentication
+      // تشفير كلمة المرور قبل حفظها في Firestore
+      String hashedPassword = sha256.convert(utf8.encode(person.uId)).toString();
+
+      // التسجيل في Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
           email: person.email, password: person.uId);
       User? user = userCredential.user;
 
       if (user != null) {
-        // Registration in Firestore
+        // التسجيل في Firestore
         await FirebaseFirestore.instance
             .collection('users')
             .doc(user.uid)
-            .set(person.toJson());
-
-        // Navigate to the next screen after successful registration
+            .set({
+          'email': person.email,
+          'first_name': person.firstName,
+          'last_name': person.lastName,
+          'password': hashedPassword, // حفظ كلمة المرور المشفرة
+          'phone_number': person.phoneNumber,
+          'address_street': person.addressStreet,
+          'address_city': person.addressCity,
+        });
+//
+        // الانتقال إلى الشاشة التالية بعد التسجيل بنجاح
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       }
     } catch (e) {
-      // If an error occurs during registration in Firebase Authentication or Firestore
+      // إذا حدث خطأ أثناء التسجيل في Firebase Authentication أو Firestore
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            'Error occurred: $e',
+            'حدث خطأ: $e',
             style: TextStyle(
               fontSize: 18,
               color: Colors.white,

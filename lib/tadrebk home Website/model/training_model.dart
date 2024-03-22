@@ -42,7 +42,7 @@ List<Training> trainings = [
     description: "Learn about various legal aspects of office work with this comprehensive course.",
     image:
     "assets/images/vodfone.jpg",
-    price: 200.0,
+    price: 250.0,
     rating: 4.9,
   ),
   Training(
@@ -60,7 +60,7 @@ List<Training> trainings = [
     image:
     "assets/images/The-Best-Creative-Online-Courses.webp",
     description: "Learn about various legal aspects of office work with this comprehensive course.",
-    price: 200.0,
+    price: 700.0,
     rating: 4.9,
   ),
   Training(
@@ -74,7 +74,7 @@ List<Training> trainings = [
   ),
   Training(
     id: 2,
-    title: "Trinning in oficece lowyer a",
+    title: "Trinning in oficece lowyer",
     description: "Learn about various legal aspects of office work with this comprehensive course.",
     image:
     "assets/images/lowyer.jpg",
