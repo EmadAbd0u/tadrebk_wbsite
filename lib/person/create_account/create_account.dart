@@ -279,7 +279,7 @@ class _CreateAccountPersonState extends State<CreateAccountPerson> {
           'address_street': person.addressStreet,
           'address_city': person.addressCity,
         });
-
+//
         // الانتقال إلى الشاشة التالية بعد التسجيل بنجاح
         Navigator.pushReplacement(
           context,
